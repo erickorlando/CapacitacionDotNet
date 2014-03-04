@@ -1,0 +1,33 @@
+﻿PARA DB2
+Ensamblados:
+Bodega.DatosDB2
+Namespaces:
+Bodega.DatosDB2
+
+PARA SQL
+
+Ensamblados:
+Bodega.Datos
+Namespaces:
+Bodega.Datos.Model
+------------------------
+
+Ensamblados que usará Unity
+
+Bodega.Entidades
+Bodega.Negocio
+Bodega.Repositorio
+
+Namespaces:
+Bodega.Entidades
+Bodega.Repositorio
+
+------------------------------
+
+Container = Es el contenedor de todas las instancias que usará la aplicacion
+
+--------------------------------
+IRepositorio<Clientes> ==> ClientesRepository
+IRepositorio<Producto> ==> ProductoRepository
+IRepositorio<FacturaCabecera> ==> FacturaRepository
+

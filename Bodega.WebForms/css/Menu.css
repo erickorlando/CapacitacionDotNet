@@ -1,0 +1,186 @@
+
+
+/* nuevo estilo menu */
+.botonMenu
+{
+    margin: 0;
+}
+
+.menu_item0
+{
+    background: url(../resources/tit_menu.gif) no-repeat;
+    height: 29px !important;
+}
+
+
+
+    .menu_item0 a
+    {
+        margin: -1px 0 0 0px;
+        cursor: pointer;
+        color: #fff;
+        font-family: "Trebuchet MS";
+        font-size: 11px;
+        text-transform: uppercase;
+        font-weight: bold;
+        background: url(../resources/tit_menu.gif) no-repeat;
+        height: 29px!important;
+    }
+
+        .menu_item0 a:link
+        {
+            display: block;
+            color: #fff;
+            font-family: "Trebuchet MS";
+            font-size: 11px;
+            text-transform: uppercase;
+            text-decoration: none;
+        }
+
+        .menu_item0 a:visited
+        {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .menu_item0 a:hover
+        {
+            color: #5a88b3;
+            text-decoration: none;
+        }
+
+        .menu_item0 a:active
+        {
+            color: #fff;
+            text-decoration: none;
+        }
+
+
+/*comienzo menu principal*/
+
+.fnd_menu
+{
+    background: #9ab7d1;
+}
+
+.altura100gr
+{
+    background: #fff;
+    margin: -1 -1;
+    width: 994px;
+    height: 100%;
+}
+
+.altura100
+{
+    background: #9ab7d1;
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.menu_item1 a
+{
+    display: block;
+    height: 23px !important;
+    font-family: "Trebuchet MS";
+    font-size: 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin: 0 0 1px 0;
+    color: #cfdeeb;
+    background: url(../resources/fnd_btn.gif) no-repeat;
+    font-weight: normal;
+}
+
+.menu_item2 a
+{
+    display: block;
+    height: 23px !important;
+    font-family: "Trebuchet MS";
+    font-size: 10px;
+    text-decoration: none;
+    text-transform: uppercase;
+    margin: 0 0 1px 0;
+    color: #fff;
+    background: url(../resources/fnd_btn_n2.gif) no-repeat;
+}
+
+
+.link0
+{
+    width: 145px;
+    margin: 5px 0 0 12px;
+    cursor: pointer;
+}
+
+.link1
+{
+    width: 145px;
+    margin: 5px 0 0 22px;
+    cursor: pointer;
+}
+
+.link2
+{
+    width: 145px;
+    margin: 5px 0 0 34px;
+    cursor: pointer;
+}
+
+.link3
+{
+    width: 145px;
+    margin: 5px 0 0 46px;
+    cursor: pointer;
+}
+
+
+.menu_item1 a:link
+{
+    background: url(../resources/fnd_btn.gif) no-repeat !important;
+}
+
+.menu_item1 a:visited
+{
+    background: url(../resources/fnd_btn.gif) no-repeat !important;
+}
+
+.menu_item1 a:hover
+{
+    background: url(../resources/fnd_btn.gif) !important;
+    color: #fff;
+}
+
+.menu_item1 a:active
+{
+    background: url(../resources/fnd_btn.gif) no-repeat !important;
+}
+
+
+.menu_item2 a:link
+{
+    background: url(../resources/fnd_btn_n2.gif) no-repeat !important;
+}
+
+.menu_item2 a:visited
+{
+    background: url(../resources/fnd_btn_n2.gif) no-repeat !important;
+}
+
+.menu_item2 a:hover
+{
+    background: url(../resources/fnd_btn_n2.gif) !important;
+    color: #cfdeeb;
+}
+
+.menu_item2 a:active
+{
+    background: url(../resources/fnd_btn_n2.gif) no-repeat !important;
+}
+
+/*fin de menu principal*/
+/* fin nuevo estilo menu */
