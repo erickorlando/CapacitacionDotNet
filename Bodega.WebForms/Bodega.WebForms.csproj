@@ -67,25 +67,37 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Clientes\ClientesForm.aspx" />
     <Content Include="Clientes\ListaClientesForm.aspx" />
     <Content Include="Controles\BarraBotonesLista.ascx" />
     <Content Include="css\Estilos.css" />
     <Content Include="css\Menu.css" />
     <Content Include="Default.aspx" />
+    <Content Include="Facturas\FacturaDetallesForm.aspx" />
+    <Content Include="Facturas\FacturasForm.aspx" />
     <Content Include="Global.asax" />
-    <Content Include="Resources\bodegas_logo.png" />
-    <Content Include="Resources\bodega_icono.png" />
-    <Content Include="Resources\Buscar_16x16.png" />
-    <Content Include="Resources\Cancelar_16x16.png" />
-    <Content Include="Resources\Editar_16x16.png" />
-    <Content Include="Resources\Eliminar_16x16.png" />
-    <Content Include="Resources\Guardar_16x16.png" />
-    <Content Include="Resources\linea_home.gif" />
-    <Content Include="Resources\Nuevo_16x16.png" />
-    <Content Include="Resources\spacer.gif" />
+    <Content Include="images\bodegas_logo.png" />
+    <Content Include="images\bodega_icono.png" />
+    <Content Include="images\Buscar_16x16.png" />
+    <Content Include="images\Cancelar_16x16.png" />
+    <Content Include="images\Editar_16x16.png" />
+    <Content Include="images\Eliminar_16x16.png" />
+    <Content Include="images\Guardar_16x16.png" />
+    <Content Include="images\linea_home.gif" />
+    <Content Include="images\Nuevo_16x16.png" />
+    <Content Include="images\spacer.gif" />
+    <Content Include="Productos\ListaProductosForm.aspx" />
+    <Content Include="Productos\ProductosForm.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Clientes\ClientesForm.aspx.cs">
+      <DependentUpon>ClientesForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Clientes\ClientesForm.aspx.designer.cs">
+      <DependentUpon>ClientesForm.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Clientes\ListaClientesForm.aspx.cs">
       <DependentUpon>ListaClientesForm.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -107,6 +119,20 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Facturas\FacturaDetallesForm.aspx.cs">
+      <DependentUpon>FacturaDetallesForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Facturas\FacturaDetallesForm.aspx.designer.cs">
+      <DependentUpon>FacturaDetallesForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Facturas\FacturasForm.aspx.cs">
+      <DependentUpon>FacturasForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Facturas\FacturasForm.aspx.designer.cs">
+      <DependentUpon>FacturasForm.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -116,6 +142,20 @@
     </Compile>
     <Compile Include="Inicio.Master.designer.cs">
       <DependentUpon>Inicio.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Productos\ListaProductosForm.aspx.cs">
+      <DependentUpon>ListaProductosForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Productos\ListaProductosForm.aspx.designer.cs">
+      <DependentUpon>ListaProductosForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Productos\ProductosForm.aspx.cs">
+      <DependentUpon>ProductosForm.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Productos\ProductosForm.aspx.designer.cs">
+      <DependentUpon>ProductosForm.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -155,10 +195,7 @@
       <Name>Bodega.Repositorio</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Facturas\" />
-    <Folder Include="Productos\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

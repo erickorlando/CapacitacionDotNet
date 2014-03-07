@@ -8,7 +8,7 @@
 
 .menu_item0
 {
-    background: url(../resources/tit_menu.gif) no-repeat;
+    background: url(../images/tit_menu.gif) no-repeat;
     height: 29px !important;
 }
 
@@ -23,7 +23,7 @@
         font-size: 11px;
         text-transform: uppercase;
         font-weight: bold;
-        background: url(../resources/tit_menu.gif) no-repeat;
+        background: url(../images/tit_menu.gif) no-repeat;
         height: 29px!important;
     }
 
@@ -92,7 +92,7 @@
     text-transform: uppercase;
     margin: 0 0 1px 0;
     color: #cfdeeb;
-    background: url(../resources/fnd_btn.gif) no-repeat;
+    background: url(../images/fnd_btn.gif) no-repeat;
     font-weight: normal;
 }
 
@@ -106,7 +106,7 @@
     text-transform: uppercase;
     margin: 0 0 1px 0;
     color: #fff;
-    background: url(../resources/fnd_btn_n2.gif) no-repeat;
+    background: url(../images/fnd_btn_n2.gif) no-repeat;
 }
 
 
@@ -141,45 +141,45 @@
 
 .menu_item1 a:link
 {
-    background: url(../resources/fnd_btn.gif) no-repeat !important;
+    background: url(../images/fnd_btn.gif) no-repeat !important;
 }
 
 .menu_item1 a:visited
 {
-    background: url(../resources/fnd_btn.gif) no-repeat !important;
+    background: url(../images/fnd_btn.gif) no-repeat !important;
 }
 
 .menu_item1 a:hover
 {
-    background: url(../resources/fnd_btn.gif) !important;
+    background: url(../images/fnd_btn.gif) !important;
     color: #fff;
 }
 
 .menu_item1 a:active
 {
-    background: url(../resources/fnd_btn.gif) no-repeat !important;
+    background: url(../images/fnd_btn.gif) no-repeat !important;
 }
 
 
 .menu_item2 a:link
 {
-    background: url(../resources/fnd_btn_n2.gif) no-repeat !important;
+    background: url(../images/fnd_btn_n2.gif) no-repeat !important;
 }
 
 .menu_item2 a:visited
 {
-    background: url(../resources/fnd_btn_n2.gif) no-repeat !important;
+    background: url(../images/fnd_btn_n2.gif) no-repeat !important;
 }
 
 .menu_item2 a:hover
 {
-    background: url(../resources/fnd_btn_n2.gif) !important;
+    background: url(../images/fnd_btn_n2.gif) !important;
     color: #cfdeeb;
 }
 
 .menu_item2 a:active
 {
-    background: url(../resources/fnd_btn_n2.gif) no-repeat !important;
+    background: url(../images/fnd_btn_n2.gif) no-repeat !important;
 }
 
 /*fin de menu principal*/

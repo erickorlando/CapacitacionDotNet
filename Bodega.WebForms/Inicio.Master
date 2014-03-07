@@ -4,110 +4,112 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Sistema de Bodegas</title>
-    <link rel="stylesheet" type="text/css" href="css/Estilos.css" />
-    <link rel="stylesheet" type="text/css" href="css/Menu.css" />
-    <asp:ContentPlaceHolder ID="head" runat="server">
-    </asp:ContentPlaceHolder>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Sistema de Bodegas</title>
+	<link rel="stylesheet" type="text/css" href="css/Estilos.css" />
+	<link rel="stylesheet" type="text/css" href="css/Menu.css" />
+	<asp:ContentPlaceHolder ID="head" runat="server">
+	</asp:ContentPlaceHolder>
 </head>
 <body>
-    <form id="form1" runat="server">
-        &nbsp;<div id="div_master">
-            <table>
-                <tr>
-                    <td colspan="1" style="vertical-align: bottom"></td>
-                    <td colspan="3">
-                        <asp:Panel ID="pnlCabecera" runat="server" Width="100%">
-                            <table>
-                                <tr>
-                                    <td style="width: 19%">
-                                        <asp:Image runat="server" ID="imgLogo" ImageUrl="~/Resources/bodega_icono.png" />
-                                    </td>
-                                    <td style="vertical-align: bottom">
-                                        <table>
-                                            <tr>
-                                                <td style="text-align: right; vertical-align: bottom">
-                                                    <asp:Label ID="Label1" runat="server" Text="Sistema de Bodegas - Plan de Aprendizaje .NET" CssClass="titulo_resaltado_Grande"></asp:Label>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>
-                                                    <img src="Resources/linea_home.gif" />
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td style="text-align: right; vertical-align: bottom">
-                                                    <asp:Label ID="lblUsuario" runat="server" CssClass="titulo_resaltado_Pequeno" />
-                                                    &nbsp;&nbsp;
-                                                    <asp:Label ID="lblHora" runat="server" CssClass="titulo_resaltado_Pequeno" />
-                                                </td>
-                                            </tr>
-                                        </table>
-                                    </td>
-                                </tr>
-                            </table>
-                        </asp:Panel>
-                    </td>
-                </tr>
-                <tr>
-                    <td style="text-align: left; background: #9ab7d1; vertical-align: top">
-                        <img src="Resources/spacer.gif" height="600" width="0" border="0" />
-                    </td>
-                    <td style="text-align: left; background: #9ab7d1; vertical-align: top">
-                        <table class="fnd_menu">
-                            <tr>
-                                <td style="width: 190px">
-                                    <asp:Panel ID="pnlMenu" runat="server" Width="210px">
-                                        <asp:Menu ID="menu" runat="server" MaximumDynamicDisplayLevels="0" StaticDisplayLevels="10"
-                                            Width="198px" StaticSubMenuIndent="" SkipLinkText="">
-                                            <LevelSubMenuStyles>
-                                                <asp:SubMenuStyle CssClass="menu_item0" Font-Underline="False"/>
-                                                <asp:SubMenuStyle CssClass="menu_item1" Font-Underline="False" />
-                                                <asp:SubMenuStyle CssClass="menu_item2" Font-Underline="False" />
-                                            </LevelSubMenuStyles>
-                                            <StaticMenuItemStyle ItemSpacing="1px" />
-                                          
-                                            <Items>
+	<form id="form1" runat="server">
+		&nbsp;<div id="div_master">
+			<table>
+				<tr>
+					<td colspan="1" style="vertical-align: bottom"></td>
+					<td colspan="3">
+						<asp:Panel ID="pnlCabecera" runat="server" Width="100%">
+							<table>
+								<tr>
+									<td style="width: 19%">
+										<asp:Image runat="server" ID="imgLogo" ImageUrl="~/images/bodega_icono.png" />
+									</td>
+									<td style="vertical-align: bottom">
+										<table>
+											<tr>
+												<td style="text-align: right; vertical-align: bottom">
+													<asp:Label ID="Label1" runat="server" Text="Sistema de Bodegas - Plan de Aprendizaje .NET" CssClass="titulo_resaltado_Grande"></asp:Label>
+												</td>
+											</tr>
+											<tr>
+												<td>
+													<asp:Image runat="server" ImageUrl="~/images/linea_home.gif" />
+												</td>
+											</tr>
+											<tr>
+												<td style="text-align: right; vertical-align: bottom">
+													<asp:Label ID="lblUsuario" runat="server" CssClass="titulo_resaltado_Pequeno" />
+													&nbsp;&nbsp;
+													<asp:Label ID="lblHora" runat="server" CssClass="titulo_resaltado_Pequeno" />
+												</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+						</asp:Panel>
+					</td>
+				</tr>
+				<tr>
+					<td style="text-align: left; background: #9ab7d1; vertical-align: top">
+						<asp:Image runat="server" ImageUrl="~/images/spacer.gif" height="600" width="0" border="0" />
+					</td>
+					<td style="text-align: left; background: #9ab7d1; vertical-align: top">
+						<table class="fnd_menu">
+							<tr>
+								<td style="width: 190px">
+									<asp:Panel ID="pnlMenu" runat="server" Width="210px">
+										<asp:Menu ID="menu" runat="server" MaximumDynamicDisplayLevels="0" StaticDisplayLevels="10"
+											Width="198px" StaticSubMenuIndent="" SkipLinkText="">
+											<LevelSubMenuStyles>
+												<asp:SubMenuStyle CssClass="menu_item0" Font-Underline="False"/>
+												<asp:SubMenuStyle CssClass="menu_item1" Font-Underline="False" />
+												<asp:SubMenuStyle CssClass="menu_item2" Font-Underline="False" />
+											</LevelSubMenuStyles>
+											<StaticMenuItemStyle ItemSpacing="1px" />
+										  
+											<Items>
 												<asp:MenuItem NavigateUrl="~/Clientes/ListaClientesForm.aspx" Text="Clientes" />
-                                            </Items>
-                                        </asp:Menu>
-                                    </asp:Panel>
-                                </td>
-                                <td class="columna_top"></td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">&nbsp;
-                                </td>
-                            </tr>
-                            <tr>
-                                <td style="width: 190px" class="columna_top">
-                                    <table style="width: 198px" class="columna_top">
-                                        <tr>
-                                            <td style="width: 100%">
-                                                <asp:Button ID="btnInicio" runat="server" Text="Inicio" /></td>
-                                        </tr>
-                                        <tr>
-                                            <td style="width: 100%">&nbsp;</td>
-                                        </tr>
-                                    </table>
-                                </td>
-                                <td class="columna_top"></td>
-                            </tr>
-                        </table>
+												<asp:MenuItem NavigateUrl="~/Productos/ListaProductosForm.aspx"  Text="Productos"/>
+												<asp:MenuItem NavigateUrl="~/Facturas/FacturasForm.aspx" Text="Generador de Facturas" />
+											</Items>
+										</asp:Menu>
+									</asp:Panel>
+								</td>
+								<td class="columna_top"></td>
+							</tr>
+							<tr>
+								<td colspan="2">&nbsp;
+								</td>
+							</tr>
+							<tr>
+								<td style="width: 190px" class="columna_top">
+									<table style="width: 198px" class="columna_top">
+										<tr>
+											<td style="width: 100%">
+												<asp:Button ID="btnInicio" runat="server" Text="Inicio" /></td>
+										</tr>
+										<tr>
+											<td style="width: 100%">&nbsp;</td>
+										</tr>
+									</table>
+								</td>
+								<td class="columna_top"></td>
+							</tr>
+						</table>
 
-                    </td>
-                    <td>
-                        <img height="3" src="resources/spacer.gif" style="width: 10px" />
-                    </td>
-                    <td style="text-align: left; vertical-align: top; width: 900px">
-                        <asp:ContentPlaceHolder ID="cphPrincipal" runat="server">
-                        </asp:ContentPlaceHolder>
-                    </td>
-                </tr>
-            </table>
-        </div>
-    </form>
+					</td>
+					<td>
+						<asp:Image runat="server" height="3" ImageUrl="~/images/spacer.gif" style="width: 10px" />
+					</td>
+					<td style="text-align: left; vertical-align: top; width: 900px">
+						<asp:ContentPlaceHolder ID="cphPrincipal" runat="server">
+						</asp:ContentPlaceHolder>
+					</td>
+				</tr>
+			</table>
+		</div>
+	</form>
 </body>
 
 </html>

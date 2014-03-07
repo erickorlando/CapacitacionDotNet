@@ -91,6 +91,7 @@ DocProject/Help/html
 
 # Click-Once directory
 publish/
+publicar/
 
 # Publish Web Output
 *.Publish.xml
@@ -115,7 +116,6 @@ ClientBin/
 *~
 *.dbmdl
 *.[Pp]ublish.xml
-*.pfx
 *.publishsettings
 
 # RIA/Silverlight projects
