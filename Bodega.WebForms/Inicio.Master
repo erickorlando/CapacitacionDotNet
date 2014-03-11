@@ -22,7 +22,7 @@
 							<table>
 								<tr>
 									<td style="width: 19%">
-										<asp:Image runat="server" ID="imgLogo" ImageUrl="~/images/bodega_icono.png" />
+										<asp:Image runat="server" ID="imgLogo" ImageUrl="~/images/bodega_icono.png" DescriptionUrl="~/Default.aspx" />
 									</td>
 									<td style="vertical-align: bottom">
 										<table>
@@ -52,7 +52,7 @@
 				</tr>
 				<tr>
 					<td style="text-align: left; background: #9ab7d1; vertical-align: top">
-						<asp:Image runat="server" ImageUrl="~/images/spacer.gif" height="600" width="0" border="0" />
+						<asp:Image runat="server" ImageUrl="~/images/spacer.gif" Height="600" Width="0" border="0" />
 					</td>
 					<td style="text-align: left; background: #9ab7d1; vertical-align: top">
 						<table class="fnd_menu">
@@ -62,15 +62,15 @@
 										<asp:Menu ID="menu" runat="server" MaximumDynamicDisplayLevels="0" StaticDisplayLevels="10"
 											Width="198px" StaticSubMenuIndent="" SkipLinkText="">
 											<LevelSubMenuStyles>
-												<asp:SubMenuStyle CssClass="menu_item0" Font-Underline="False"/>
+												<asp:SubMenuStyle CssClass="menu_item0" Font-Underline="False" />
 												<asp:SubMenuStyle CssClass="menu_item1" Font-Underline="False" />
 												<asp:SubMenuStyle CssClass="menu_item2" Font-Underline="False" />
 											</LevelSubMenuStyles>
 											<StaticMenuItemStyle ItemSpacing="1px" />
-										  
+
 											<Items>
 												<asp:MenuItem NavigateUrl="~/Clientes/ListaClientesForm.aspx" Text="Clientes" />
-												<asp:MenuItem NavigateUrl="~/Productos/ListaProductosForm.aspx"  Text="Productos"/>
+												<asp:MenuItem NavigateUrl="~/Productos/ListaProductosForm.aspx" Text="Productos" />
 												<asp:MenuItem NavigateUrl="~/Facturas/FacturasForm.aspx" Text="Generador de Facturas" />
 											</Items>
 										</asp:Menu>
@@ -83,24 +83,14 @@
 								</td>
 							</tr>
 							<tr>
-								<td style="width: 190px" class="columna_top">
-									<table style="width: 198px" class="columna_top">
-										<tr>
-											<td style="width: 100%">
-												<asp:Button ID="btnInicio" runat="server" Text="Inicio" /></td>
-										</tr>
-										<tr>
-											<td style="width: 100%">&nbsp;</td>
-										</tr>
-									</table>
-								</td>
+								<td style="width: 190px" class="columna_top"></td>
 								<td class="columna_top"></td>
 							</tr>
 						</table>
 
 					</td>
 					<td>
-						<asp:Image runat="server" height="3" ImageUrl="~/images/spacer.gif" style="width: 10px" />
+						<asp:Image runat="server" Height="3" ImageUrl="~/images/spacer.gif" Style="width: 10px" />
 					</td>
 					<td style="text-align: left; vertical-align: top; width: 900px">
 						<asp:ContentPlaceHolder ID="cphPrincipal" runat="server">

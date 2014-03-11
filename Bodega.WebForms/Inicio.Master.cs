@@ -11,7 +11,7 @@ namespace Bodega.WebForms
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            btnInicio.Click += (a, b) => Response.Redirect("~/Default.aspx");
+            
         }
     }
 }

@@ -69,6 +69,7 @@
   <ItemGroup>
     <Content Include="Clientes\ClientesForm.aspx" />
     <Content Include="Clientes\ListaClientesForm.aspx" />
+    <Content Include="Controles\BarraBotonesAccion.ascx" />
     <Content Include="Controles\BarraBotonesLista.ascx" />
     <Content Include="css\Estilos.css" />
     <Content Include="css\Menu.css" />
@@ -84,10 +85,14 @@
     <Content Include="images\Eliminar_16x16.png" />
     <Content Include="images\Guardar_16x16.png" />
     <Content Include="images\linea_home.gif" />
+    <Content Include="images\manito.png" />
     <Content Include="images\Nuevo_16x16.png" />
     <Content Include="images\spacer.gif" />
     <Content Include="Productos\ListaProductosForm.aspx" />
     <Content Include="Productos\ProductosForm.aspx" />
+    <None Include="Scripts\jquery-2.1.0.intellisense.js" />
+    <Content Include="Scripts\jquery-2.1.0.js" />
+    <Content Include="Scripts\jquery-2.1.0.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -104,6 +109,13 @@
     </Compile>
     <Compile Include="Clientes\ListaClientesForm.aspx.designer.cs">
       <DependentUpon>ListaClientesForm.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controles\BarraBotonesAccion.ascx.cs">
+      <DependentUpon>BarraBotonesAccion.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controles\BarraBotonesAccion.ascx.designer.cs">
+      <DependentUpon>BarraBotonesAccion.ascx</DependentUpon>
     </Compile>
     <Compile Include="Controles\BarraBotonesLista.ascx.cs">
       <DependentUpon>BarraBotonesLista.ascx</DependentUpon>
@@ -162,6 +174,7 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <Content Include="Inicio.Master" />
+    <Content Include="Scripts\jquery-2.1.0.min.map" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
