@@ -18,23 +18,23 @@ namespace Bodega.WebForms.Clientes
 			{
 				LoadData();
 			}
-			barra.BotonNuevo += () =>
+			barra.BotonNuevo += (s, g) =>
 				{
 					Session["IsNew"] = true;
 					Response.Redirect("ClientesForm.aspx");
 				};
-			barra.BotonEditar += () =>
+			barra.BotonEditar += (s, g) =>
 				{
 					Session["IsNew"] = false;
 					Response.Redirect("ClientesForm.aspx");
 				};
-			barra.BotonEliminar += () =>
+			barra.BotonEliminar += (s, g) =>
 				{
 					//TODO: Implementar el boton Eliminar
 				};
-			barra.BotonBuscar += () => LoadData();
+			barra.BotonBuscar += (s, g) => LoadData();
 
-			gdvClientes.SelectedIndexChanged += (s,g) => 
+			gdvClientes.SelectedIndexChanged += (s, g) =>
 				Session["ID"] = gdvClientes.SelectedDataKey.Value.ToString();
 
 		}

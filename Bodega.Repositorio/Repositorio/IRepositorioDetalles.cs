@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Bodega.Repositorio
 {
@@ -12,7 +8,7 @@ namespace Bodega.Repositorio
         where TDetalles : class
     {
         
-        List<TDetalles> Detalles { get; set; }
+        IEnumerable<TDetalles> Detalles { get; set; }
 
     }
 }

@@ -16,7 +16,7 @@ namespace Bodega.WebForms.Clientes
 			if (!IsPostBack)
 				LoadData();
 
-			Barra.BotonGuardar += () =>
+			Barra.BotonGuardar += (s,g) =>
 			{
 				// Recuperamos la sesión del Target.
 				var target = Session["Target"] as ClienteNegocio;
@@ -28,7 +28,7 @@ namespace Bodega.WebForms.Clientes
 				Response.Redirect("ListaClientesForm.aspx");
 			};
 
-			Barra.BotonCancelar += () =>
+			Barra.BotonCancelar += (s,g) =>
 			{
 				Response.Redirect("ListaClientesForm.aspx");
 			};

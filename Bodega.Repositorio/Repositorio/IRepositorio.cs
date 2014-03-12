@@ -3,26 +3,26 @@ using System.Collections.Generic;
 
 namespace Bodega.Repositorio
 {
-    public interface IRepositorio<TEntity> : IDisposable
-        where TEntity : class
-    {
+	public interface IRepositorio<TEntity> : IDisposable
+		where TEntity : class
+	{
 
-        TEntity Entidad { get; set; }
+		TEntity Entidad { get; set; }
 
-        bool IsNew { get; set; }
+		bool IsNew { get; set; }
 
-        bool Guardar();
+		bool Guardar();
 
-        bool Eliminar();
+		bool Eliminar();
 
-        void Crear();
+		void Crear();
 
-        void GetByID(string ID);
+		void GetById(string id);
 
-        List<TEntity> GetAllRegistros();
+		IEnumerable<TEntity> ListarAllRegistros();
 
-        List<TEntity> GetRegistros_Filtros(int opc, String valor);
+		IEnumerable<TEntity> ListarAllRegistros(int opc, String valor);
 
 
-    }
+	}
 }

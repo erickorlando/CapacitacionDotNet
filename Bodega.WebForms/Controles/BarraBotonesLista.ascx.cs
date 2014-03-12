@@ -19,27 +19,27 @@ namespace Bodega.WebForms.Controles
 
         public void Nuevo()
         {
-            BotonNuevo();
+            BotonNuevo(this, EventArgs.Empty);
         }
 
         public void Editar()
         {
-            BotonEditar();
+            BotonEditar(this, EventArgs.Empty);
         }
 
         public void Eliminar()
         {
-            BotonEliminar();
+            BotonEliminar(this, EventArgs.Empty);
         }
 
         public void Buscar()
         {
-            BotonBuscar();
+            BotonBuscar(this, EventArgs.Empty);
         }
 
-        public event Action BotonNuevo = delegate { };
-        public event Action BotonEditar = delegate { };
-        public event Action BotonEliminar = delegate { };
-        public event Action BotonBuscar = delegate { };
+        public event EventHandler BotonNuevo = delegate { };
+		public event EventHandler BotonEditar = delegate { };
+		public event EventHandler BotonEliminar = delegate { };
+		public event EventHandler BotonBuscar = delegate { };
     }
 }

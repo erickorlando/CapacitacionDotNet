@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Bodega.Negocio;
 using Microsoft.Practices.Unity;
 using Microsoft.Practices.Unity.Configuration;
@@ -30,9 +31,9 @@ namespace Bodega.Test
         {
             using (var target = container.Resolve<FacturaNegocio>())
             {
-                var result = target.Listar();
+                var result = target.Listar().ToList();
 
-                Assert.AreEqual(result.Count == 0, true);
+                Assert.AreEqual(result.Count() == 0, true);
             }
         }
 

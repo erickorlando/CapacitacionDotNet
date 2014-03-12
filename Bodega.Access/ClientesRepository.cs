@@ -64,7 +64,7 @@ namespace Bodega.Access
 			IsNew = true;
 		}
 
-		public void GetByID(string ID)
+		public void GetById(string ID)
 		{
 			using (var cn = new OleDbConnection(Conexion.CadenaConexion()))
 			{
@@ -92,7 +92,7 @@ namespace Bodega.Access
 			}
 		}
 
-		public List<Clientes> GetAllRegistros()
+		public IEnumerable<Clientes> ListarAllRegistros()
 		{
 			var lista = new List<Clientes>();
 			using (var cn = new OleDbConnection(Conexion.CadenaConexion()))
@@ -132,8 +132,7 @@ namespace Bodega.Access
 			{ }
 		}
 
-
-		public List<Clientes> GetRegistros_Filtros(int opc, string valor)
+		public IEnumerable<Clientes> ListarAllRegistros(int opc, string valor)
 		{
 			throw new NotImplementedException();
 		}

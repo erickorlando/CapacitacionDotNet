@@ -7,206 +7,215 @@ using IBM.Data.DB2.iSeries;
 
 namespace Bodega.DatosDB2
 {
-    public class ClientesRepository : IRepositorio<Clientes>
-    {
+	public class ClientesRepository : IRepositorio<Clientes>
+	{
 
-        public ClientesRepository()
-        {
+		public ClientesRepository()
+		{
 
-        }
+		}
 
-        public Clientes Entidad { get; set; }
-        public bool IsNew { get; set; }
+		public Clientes Entidad { get; set; }
+		public bool IsNew { get; set; }
 
-        public bool Guardar()
-        {
-            try
-            {
-                using (var cn = new iDB2Connection(Conexion.CadenaConexion()))
-                {
-                    using (var cmd = cn.CreateCommand())
-                    {
-                        cmd.CommandText = IsNew ? "USP_INSERTARCLIENTE" : "USP_ACTUALIZARCLIENTE";
-                        cmd.CommandType = System.Data.CommandType.StoredProcedure;
+		public bool Guardar()
+		{
+			try
+			{
+				using (var cn = new iDB2Connection(Conexion.CadenaConexion()))
+				{
+					using (var cmd = cn.CreateCommand())
+					{
+						cmd.CommandText = IsNew ? "USP_INSERTARCLIENTE" : "USP_ACTUALIZARCLIENTE";
+						cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
-                        cmd.Parameters.AddWithValue("@IDCLIENTE", Entidad.IdCliente);
-                        cmd.Parameters.AddWithValue("@NOMBRES", Entidad.Nombres);
-                        cmd.Parameters.AddWithValue("@APELLIDOS", Entidad.Apellidos);
-                        cmd.Parameters.AddWithValue("@CORREO", Entidad.Correo);
-                        cmd.Parameters.AddWithValue("@EDAD", Entidad.Edad);
+						cmd.Parameters.AddWithValue("@IDCLIENTE", Entidad.IdCliente);
+						cmd.Parameters.AddWithValue("@NOMBRES", Entidad.Nombres);
+						cmd.Parameters.AddWithValue("@APELLIDOS", Entidad.Apellidos);
+						cmd.Parameters.AddWithValue("@CORREO", Entidad.Correo);
+						cmd.Parameters.AddWithValue("@EDAD", Entidad.Edad);
 
-                        cn.Open();
+						cn.Open();
 
-                        cmd.ExecuteNonQuery();
+						cmd.ExecuteNonQuery();
 
-                        return true;
-                    }
-                }
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-        }
+						return true;
+					}
+				}
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
 
-        public bool Eliminar()
-        {
-            try
-            {
-                if (IsNew)
-                    throw new InvalidOperationException("Un registro nuevo no se puede eliminar");
+		public bool Eliminar()
+		{
+			try
+			{
+				if (IsNew)
+					throw new InvalidOperationException("Un registro nuevo no se puede eliminar");
 
-                using (var cn = new iDB2Connection(Conexion.CadenaConexion()))
-                {
-                    using (var cmd = cn.CreateCommand())
-                    {
-                        cmd.CommandText = "USP_ELIMINARCLIENTE";
-                        cmd.CommandType = System.Data.CommandType.StoredProcedure;
+				using (var cn = new iDB2Connection(Conexion.CadenaConexion()))
+				{
+					using (var cmd = cn.CreateCommand())
+					{
+						cmd.CommandText = "USP_ELIMINARCLIENTE";
+						cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
-                        cmd.Parameters.AddWithValue("@IDCLIENTE", Entidad.IdCliente);
-                        cn.Open();
+						cmd.Parameters.AddWithValue("@IDCLIENTE", Entidad.IdCliente);
+						cn.Open();
 
-                        cmd.ExecuteNonQuery();
-                        return true;
-                    }
-                }
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-        }
+						cmd.ExecuteNonQuery();
+						return true;
+					}
+				}
+			}
+			catch (Exception)
+			{
+				return false;
+			}
+		}
 
-        public List<Clientes> GetAllRegistros()
-        {
-            var lista = new List<Clientes>();
-            try
-            {
-                using (var cn = new iDB2Connection(Conexion.CadenaConexion()))
-                {
-                    using (var cmd = cn.CreateCommand())
-                    {
-                        cmd.CommandText = "USP_LISTARCLIENTES";
-                        cmd.CommandType = System.Data.CommandType.StoredProcedure;
+		public IEnumerable<Clientes> ListarAllRegistros()
+		{
+			var lista = new List<Clientes>();
+			try
+			{
+				using (var cn = new iDB2Connection(Conexion.CadenaConexion()))
+				{
+					using (var cmd = cn.CreateCommand())
+					{
+						cmd.CommandText = "USP_LISTARCLIENTES";
+						cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
-                        cn.Open();
-                        using (var dr = cmd.ExecuteReader())
-                        {
-                            while (dr.Read())
-                            {
-                                lista.Add(new Clientes
-                                                    {
-                                                        IdCliente = dr.GetString(0),
-                                                        Nombres = dr.GetString(1),
-                                                        Apellidos = dr.GetString(2),
-                                                        Correo = dr.GetString(3),
-                                                        Edad = dr.GetInt32(4)
-                                                    });
-                            }
-                        }
-                        return lista;
-                    }
-                }
-            }
-            catch (Exception)
-            {
-                return lista;
-            }
-        }
+						cn.Open();
+						using (var dr = cmd.ExecuteReader())
+						{
+							while (dr.Read())
+							{
+								lista.Add(new Clientes
+													{
+														IdCliente = dr.GetString(0),
+														Nombres = dr.GetString(1),
+														Apellidos = dr.GetString(2),
+														Correo = dr.GetString(3),
+														Edad = dr.GetInt32(4)
+													});
+							}
+						}
+						return lista;
+					}
+				}
+			}
+			catch (Exception)
+			{
+				return lista;
+			}
+		}
 
-        public void Crear()
-        {
-            Entidad = new Clientes();
-            Entidad.IdCliente = Guid.NewGuid().ToString();
-            IsNew = true;
-        }
+		public void Crear()
+		{
+			Entidad = new Clientes();
+			Entidad.IdCliente = Guid.NewGuid().ToString();
+			IsNew = true;
+		}
 
-        public void GetByID(string ID)
-        {
-            using (var cn = new iDB2Connection(Conexion.CadenaConexion()))
-            {
-                using (var cmd = cn.CreateCommand())
-                {
-                    cmd.CommandText = "USP_LISTARCLIENTES";
-                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+		public void GetById(string ID)
+		{
+			using (var cn = new iDB2Connection(Conexion.CadenaConexion()))
+			{
+				using (var cmd = cn.CreateCommand())
+				{
+					cmd.CommandText = "USP_LISTARCLIENTES";
+					cmd.CommandType = System.Data.CommandType.StoredProcedure;
 
-                    cn.Open();
-                    using (var dr = cmd.ExecuteReader())
-                    {
-                        if (dr.Read())
-                        {
-                            Entidad = new Clientes
-                                                {
-                                                    IdCliente = dr.GetString(0),
-                                                    Nombres = dr.GetString(1),
-                                                    Apellidos = dr.GetString(2),
-                                                    Correo = dr.GetString(3),
-                                                    Edad = dr.GetInt32(4)
-                                                };
-                        }
-                    }
-                }
-            }
-        }
+					cn.Open();
+					using (var dr = cmd.ExecuteReader())
+					{
+						if (dr.Read())
+						{
+							Entidad = new Clientes
+												{
+													IdCliente = dr.GetString(0),
+													Nombres = dr.GetString(1),
+													Apellidos = dr.GetString(2),
+													Correo = dr.GetString(3),
+													Edad = dr.GetInt32(4)
+												};
+						}
+					}
+				}
+			}
+		}
 
-        public void Dispose()
-        {
+		public void Dispose()
+		{
+			Dispose(true);
+			GC.SuppressFinalize(this);
+		}
 
-        }
-
-
-
-        // LO ADICIONADO  Busqueda con Filtros.
-        public List<Clientes> GetRegistros_Filtros(int opc, string valor)
-        {
-            var lista = new List<Clientes>();
-            string filtro = "";
-            if (opc.Equals(1))
-            {
-                filtro = "WHERE APELLIDOS ='" + valor + "'";
-            }
-            else if (opc.Equals(2))
-            {
-                filtro = " WHERE NOMBRES ='" + valor + "'";
-            }
-            else if (opc.Equals(0))
-            {
-                filtro = "";
-            }
-            try
-            {
-                using (var cn = new iDB2Connection(Conexion.CadenaConexion()))
-                {
-                    cn.Open();
-                    using (var cmd = cn.CreateCommand())
-                    {
-                        cmd.CommandText = "SELECT * FROM Clientes  " + filtro;
-                        using (var dr = cmd.ExecuteReader())
-                        {
-                            while (dr.Read())
-                            {
-                                lista.Add(new Clientes
-                                {
-                                    IdCliente = dr.GetString(0),
-                                    Nombres = dr.GetString(1),
-                                    Apellidos = dr.GetString(2),
-                                    Correo = dr.GetString(3),
-                                    Edad = dr.GetInt32(4)
-                                });
-
-                            }
-                        }
-                        return lista;
-                    }
-                }
-            }
-            catch (Exception)
-            {
-                return lista;
-                   
-            }
-       }
+		protected virtual void Dispose(bool disposing)
+		{
+			if (disposing)
+			{
+				Entidad = null;
+			}
+		}
 
 
-    }
+
+		// LO ADICIONADO  Busqueda con Filtros.
+		public IEnumerable<Clientes> ListarAllRegistros(int opc, string valor)
+		{
+			var lista = new List<Clientes>();
+			string filtro = "";
+			if (opc.Equals(1))
+			{
+				filtro = "WHERE APELLIDOS ='" + valor + "'";
+			}
+			else if (opc.Equals(2))
+			{
+				filtro = " WHERE NOMBRES ='" + valor + "'";
+			}
+			else if (opc.Equals(0))
+			{
+				filtro = "";
+			}
+			try
+			{
+				using (var cn = new iDB2Connection(Conexion.CadenaConexion()))
+				{
+					cn.Open();
+					using (var cmd = cn.CreateCommand())
+					{
+						cmd.CommandText = "SELECT * FROM Clientes  " + filtro;
+						using (var dr = cmd.ExecuteReader())
+						{
+							while (dr.Read())
+							{
+								lista.Add(new Clientes
+								{
+									IdCliente = dr.GetString(0),
+									Nombres = dr.GetString(1),
+									Apellidos = dr.GetString(2),
+									Correo = dr.GetString(3),
+									Edad = dr.GetInt32(4)
+								});
+
+							}
+						}
+						return lista;
+					}
+				}
+			}
+			catch (Exception)
+			{
+				return lista;
+
+			}
+		}
+
+
+	}
 }

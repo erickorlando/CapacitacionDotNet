@@ -13,7 +13,7 @@ namespace Bodega.Access
         IRepositorioDetalles<FacturaCabecera, FacturaDetalle>,
         IRepositorioLectura<FacturasComplex>
     {
-        public List<FacturaDetalle> Detalles { get; set; }
+        public IEnumerable<FacturaDetalle> Detalles { get; set; }
         public FacturaCabecera Entidad { get; set; }
         public bool IsNew { get; set; }
 
@@ -84,12 +84,12 @@ namespace Bodega.Access
             IsNew = true;
         }
 
-        public void GetByID(string ID)
+        public void GetById(string ID)
         {
             throw new NotImplementedException();
         }
 
-        public List<FacturaCabecera> GetAllRegistros()
+        public IEnumerable<FacturaCabecera> ListarAllRegistros()
         {
             //var lista = new List<FacturaCabecera>();
             //using (var cn = new OleDbConnection (Conexion.CadenaConexion()))
@@ -104,12 +104,19 @@ namespace Bodega.Access
             throw new NotImplementedException();
         }
 
-        public void Dispose()
-        {
-            Entidad= null;
-        }
+		public void Dispose()
+		{
+			Dispose(true);
+			GC.SuppressFinalize(this);
+		}
 
-        public List<FacturasComplex> ListarRegistros()
+		protected virtual void Dispose(bool disposing)
+		{
+			if (disposing)
+			{ }
+		}
+
+        public IEnumerable<FacturasComplex> ListarRegistros()
         {
             var lista = new List<FacturasComplex>();
             using (var cn = new OleDbConnection(Conexion.CadenaConexion()))
@@ -163,9 +170,7 @@ namespace Bodega.Access
             }
         }
 
-
-
-        public List<FacturaCabecera> GetRegistros_Filtros(int opc, string valor)
+        public IEnumerable<FacturaCabecera> ListarAllRegistros(int opc, string valor)
         {
             throw new NotImplementedException();
         }

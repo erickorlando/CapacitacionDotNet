@@ -10,34 +10,12 @@ using Bodega.Repositorio;
 
 namespace Bodega.Access
 {
-	public class ProductoRepository: IRepositorio<Producto>
+	public class ProductoRepository : IRepositorio<Producto>
 	{
 
-		private Producto _entidad;
-		public Producto Entidad
-		{
-			get
-			{
-				return _entidad;
-			}
-			set
-			{
-				_entidad = value;
-			}
-		}
+		public Producto Entidad { get; set; }
 
-		private bool _isNew;
-		public bool IsNew
-		{
-			get
-			{
-				return _isNew;
-			}
-			set
-			{
-				_isNew = value;
-			}
-		}
+		public bool IsNew { get; set; }
 
 		public bool Guardar()
 		{
@@ -88,7 +66,7 @@ namespace Bodega.Access
 			IsNew = true;
 		}
 
-		public void GetByID(string ID)
+		public void GetById(string ID)
 		{
 			using (var cn = new OleDbConnection(Conexion.CadenaConexion()))
 			{
@@ -115,7 +93,7 @@ namespace Bodega.Access
 			}
 		}
 
-		public List<Producto> GetAllRegistros()
+		public IEnumerable<Producto> ListarAllRegistros()
 		{
 			var lista = new List<Producto>();
 			using (var cn = new OleDbConnection(Conexion.CadenaConexion()))
@@ -144,11 +122,17 @@ namespace Bodega.Access
 
 		public void Dispose()
 		{
-			
+			Dispose(true);
+			GC.SuppressFinalize(this);
 		}
 
+		protected virtual void Dispose(bool disposing)
+		{
+			if (disposing)
+			{ }
+		}
 
-		public List<Producto> GetRegistros_Filtros(int opc, string valor)
+		public IEnumerable<Producto> ListarAllRegistros(int opc, string valor)
 		{
 			throw new NotImplementedException();
 		}

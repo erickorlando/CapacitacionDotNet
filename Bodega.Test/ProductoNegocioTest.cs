@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Bodega.Negocio;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Microsoft.Practices.Unity;
@@ -33,9 +34,9 @@ namespace Bodega.Test
             // se ejecuta la sentencia SQL.
             using (var target = container.Resolve<ProductoNegocio>())
             {
-                var result = target.Listar();
+                var result = target.Listar().ToList();
 
-                Assert.AreEqual(result.Count > 0, true);
+                Assert.AreEqual(result.Count() > 0, true);
             }
         }
 

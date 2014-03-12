@@ -8,60 +8,68 @@ using Bodega.Entidades;
 
 namespace Bodega.Negocio
 {
-    public class ClienteNegocio : IDisposable
-    {
-        public IRepositorio<Clientes> Repositorio { get; set; }
+	public class ClienteNegocio : IDisposable
+	{
+		public IRepositorio<Clientes> Repositorio { get; set; }
 
-        public ClienteNegocio(IRepositorio<Clientes> repositorio)
-        {
-            Repositorio = repositorio;
-            
-        }
+		public ClienteNegocio(IRepositorio<Clientes> repositorio)
+		{
+			Repositorio = repositorio;
 
-        /// <summary>
-        /// Metodo que lista los Clientes
-        /// </summary>
-        public List<Clientes> ListarClientes()
-        {
-            return Repositorio.GetAllRegistros();
-        }
+		}
 
-        public List<Clientes> Listar_Busqueda(int opc ,string busqueda)
-        {
-            return Repositorio.GetRegistros_Filtros(opc, busqueda);
-        }
+		/// <summary>
+		/// Metodo que lista los Clientes
+		/// </summary>
+		public IEnumerable<Clientes> ListarClientes()
+		{
+			return Repositorio.ListarAllRegistros();
+		}
+
+		public IEnumerable<Clientes> Listar_Busqueda(int opc, string busqueda)
+		{
+			return Repositorio.ListarAllRegistros(opc, busqueda);
+		}
 
 
-        public void Crear()
-        {
-            Repositorio.Crear();
-        }
+		public void Crear()
+		{
+			Repositorio.Crear();
+		}
 
-        public void GetByID(string ID)
-        {
-            Repositorio.GetByID(ID);
-        }
+		public void GetByID(string ID)
+		{
+			Repositorio.GetById(ID);
+		}
 
-        public bool Guardar()
-        {
-            // Regla de Validación
-            if (string.IsNullOrEmpty(Repositorio.Entidad.Nombres))
-                throw new InvalidOperationException();
+		public bool Guardar()
+		{
+			// Regla de Validación
+			if (string.IsNullOrEmpty(Repositorio.Entidad.Nombres))
+				throw new InvalidOperationException();
 
-            return Repositorio.Guardar();
+			return Repositorio.Guardar();
 
-        }
+		}
 
-        public void Dispose()
-        {
-            if (Repositorio != null)
-                Repositorio.Dispose();
-            Repositorio = null;
-        }
+		public void Dispose()
+		{
+			Dispose(true);
+			GC.SuppressFinalize(this);
+		}
 
-        public bool Eliminar()
-        {
-            return Repositorio.Eliminar();
-        }
-    }
+		protected virtual void Dispose(bool disposing)
+		{
+			if (disposing)
+			{
+				if (Repositorio != null)
+					Repositorio.Dispose();
+			}
+		}
+
+		public bool Eliminar()
+		{
+			return Repositorio.Eliminar();
+		}
+	}
 }

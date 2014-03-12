@@ -8,54 +8,54 @@ using Bodega.Entidades;
 
 namespace Bodega.Negocio
 {
-    public class DetalleFacturaNegocio : BaseNegocio<FacturaDetalle>
-    {
+	public class DetalleFacturaNegocio : BaseNegocio<FacturaDetalle>
+	{
 
-        public string DescripcionProducto { get; set; }
-        public string IdProducto { get; set; }
+		public string DescripcionProducto { get; set; }
+		public string IdProducto { get; set; }
 
-        private int _Cantidad;
-        public int Cantidad
-        {
-            get
-            {
-                return _Cantidad;
-            }
-            set
-            {
-                _Cantidad = value;
-                ActualizaTotal();
-            }
-        }
-        private decimal _PrecioUnitario;
-        public decimal PrecioUnitario
-        {
-            get
-            { return _PrecioUnitario; }
+		private int _Cantidad;
+		public int Cantidad
+		{
+			get
+			{
+				return _Cantidad;
+			}
+			set
+			{
+				_Cantidad = value;
+				ActualizaTotal();
+			}
+		}
+		private decimal _PrecioUnitario;
+		public decimal PrecioUnitario
+		{
+			get
+			{ return _PrecioUnitario; }
 
-            set
-            {
-                _PrecioUnitario = value;
-                ActualizaTotal();
-            }
-        }
+			set
+			{
+				_PrecioUnitario = value;
+				ActualizaTotal();
+			}
+		}
 
-        private decimal _total;
-        public decimal Total
-        {
-            get
-            {
-                return _total;
-            }
-        }
+		private decimal _total;
+		public decimal Total
+		{
+			get
+			{
+				return _total;
+			}
+		}
 
-        public  void ActualizaTotal()
-        {
-            _total = _Cantidad * _PrecioUnitario;
-            RaisePropertyChanged("Total");
-            DetalleChanged();
-        }
+		public void ActualizaTotal()
+		{
+			_total = _Cantidad * _PrecioUnitario;
+			RaisePropertyChanged("Total");
+			DetalleChangedEvent(this, EventArgs.Empty);
+		}
 
-        public event Action DetalleChanged = delegate { };
-    }
+		public event EventHandler DetalleChangedEvent = delegate { };
+	}
 }

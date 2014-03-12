@@ -13,9 +13,9 @@ namespace Bodega.Negocio
     {
         public new IRepositorioDetalles<TEntity, TDetalles> Repositorio { get; set; }
 
-        public override List<TEntity> Listar()
+        public override IEnumerable<TEntity> Listar()
         {
-            return Repositorio.GetAllRegistros();
+            return Repositorio.ListarAllRegistros();
         }
 
         public override bool Guardar()
