@@ -70,10 +70,6 @@
     <Compile Include="FacturaNegocioTest.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Bodega.DatosDB2\Bodega.DatosDB2.csproj">
-      <Project>{faa14f06-86e6-4a15-b09e-086b2e5c8c21}</Project>
-      <Name>Bodega.DatosDB2</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Bodega.Datos\Bodega.DatosSQL.csproj">
       <Project>{c8f26627-a5be-47f7-a4a8-75087051b5bc}</Project>
       <Name>Bodega.DatosSQL</Name>

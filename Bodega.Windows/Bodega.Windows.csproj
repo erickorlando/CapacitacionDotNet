@@ -15,10 +15,10 @@
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
-    <IsWebBootstrapper>true</IsWebBootstrapper>
-    <PublishUrl>W:\Saptws\</PublishUrl>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
-    <InstallFrom>Web</InstallFrom>
+    <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
     <UpdateMode>Foreground</UpdateMode>
     <UpdateInterval>7</UpdateInterval>
@@ -26,7 +26,6 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>http://www.tramarsa.com.pe/SaptWS/</InstallUrl>
     <ProductName>Sistema de Bodegas</ProductName>
     <PublisherName>Corporación Grupo Romero</PublisherName>
     <SuiteName>Plan de Aprendizaje</SuiteName>
@@ -72,7 +71,7 @@
     <GenerateManifests>true</GenerateManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <SignManifests>true</SignManifests>
+    <SignManifests>false</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>
@@ -204,10 +203,6 @@
       <Project>{791ed065-7219-4fed-9d5d-87fa26a746fc}</Project>
       <Name>Bodega.Access</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Bodega.DatosDB2\Bodega.DatosDB2.csproj">
-      <Project>{faa14f06-86e6-4a15-b09e-086b2e5c8c21}</Project>
-      <Name>Bodega.DatosDB2</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Bodega.Datos\Bodega.DatosSQL.csproj">
       <Project>{c8f26627-a5be-47f7-a4a8-75087051b5bc}</Project>
       <Name>Bodega.DatosSQL</Name>
@@ -247,7 +242,7 @@
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">
       <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.5 %28x86 y x64%29</ProductName>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">

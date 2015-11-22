@@ -23,6 +23,7 @@
     <SccLocalPath>SAK</SccLocalPath>
     <SccAuxPath>SAK</SccAuxPath>
     <SccProvider>SAK</SccProvider>
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -187,10 +188,6 @@
     <ProjectReference Include="..\Bodega.Access\Bodega.Access.csproj">
       <Project>{791ed065-7219-4fed-9d5d-87fa26a746fc}</Project>
       <Name>Bodega.Access</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Bodega.DatosDB2\Bodega.DatosDB2.csproj">
-      <Project>{faa14f06-86e6-4a15-b09e-086b2e5c8c21}</Project>
-      <Name>Bodega.DatosDB2</Name>
     </ProjectReference>
     <ProjectReference Include="..\Bodega.Datos\Bodega.DatosSQL.csproj">
       <Project>{c8f26627-a5be-47f7-a4a8-75087051b5bc}</Project>

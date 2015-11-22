@@ -1,18 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bodega.DatosSQL", "Bodega.Datos\Bodega.DatosSQL.csproj", "{C8F26627-A5BE-47F7-A4A8-75087051B5BC}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bodega.Negocio", "Bodega.Negocio\Bodega.Negocio.csproj", "{26F947C0-6A2C-440B-ACC3-68FB5AC58974}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bodega.Test", "Bodega.Test\Bodega.Test.csproj", "{EC8AFF64-8F59-4B68-816F-B13FC5DE3C90}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bodega.Entidades", "Bodega.Entidades\Bodega.Entidades.csproj", "{731DD700-F64B-4BD5-B8F2-DC05D295B0FD}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bodega.Repositorio", "Bodega.Repositorio\Bodega.Repositorio.csproj", "{6E29D930-0C39-42D1-B753-56917C3D508B}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bodega.DatosDB2", "Bodega.DatosDB2\Bodega.DatosDB2.csproj", "{FAA14F06-86E6-4A15-B09E-086B2E5C8C21}"
-EndProject
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dependencias", "Dependencias", "{A5926B2B-3DA1-4DCE-B3F6-888550751A9E}"
 	ProjectSection(SolutionItems) = preProject
 		packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll = packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll
@@ -34,14 +24,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04. Comunes", "04. Comunes"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05. Pruebas", "05. Pruebas", "{9AA089EB-3326-470D-832A-B4521EB486FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bodega.Windows", "Bodega.Windows\Bodega.Windows.csproj", "{020C8D79-9C7B-487F-A4F2-1A2A69BB3E51}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bodega.Plantillas", "Bodega.Plantillas\Bodega.Plantillas.csproj", "{B04A5E31-6FED-4121-ADD2-3D184AD247A3}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bodega.Access", "Bodega.Access\Bodega.Access.csproj", "{791ED065-7219-4FED-9D5D-87FA26A746FC}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bodega.WebForms", "Bodega.WebForms\Bodega.WebForms.csproj", "{0F643BD1-A3E8-49FB-ADEC-B7F78938B2AB}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Querys SQL", "Querys SQL", "{ABF74EDD-58FC-45EC-8518-BDCCC12BD7F5}"
 	ProjectSection(SolutionItems) = preProject
 		Querys\USP_ACTUALIZARCLIENTE.sql = Querys\USP_ACTUALIZARCLIENTE.sql
@@ -59,6 +41,24 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Querys SQL", "Querys SQL", 
 		Querys\USP_LISTARFACTURAS.sql = Querys\USP_LISTARFACTURAS.sql
 		Querys\USP_LISTARPRODUCTOS.sql = Querys\USP_LISTARPRODUCTOS.sql
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bodega.DatosSQL", "Bodega.Datos\Bodega.DatosSQL.csproj", "{C8F26627-A5BE-47F7-A4A8-75087051B5BC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bodega.Negocio", "Bodega.Negocio\Bodega.Negocio.csproj", "{26F947C0-6A2C-440B-ACC3-68FB5AC58974}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bodega.Test", "Bodega.Test\Bodega.Test.csproj", "{EC8AFF64-8F59-4B68-816F-B13FC5DE3C90}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bodega.Entidades", "Bodega.Entidades\Bodega.Entidades.csproj", "{731DD700-F64B-4BD5-B8F2-DC05D295B0FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bodega.Repositorio", "Bodega.Repositorio\Bodega.Repositorio.csproj", "{6E29D930-0C39-42D1-B753-56917C3D508B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bodega.Windows", "Bodega.Windows\Bodega.Windows.csproj", "{020C8D79-9C7B-487F-A4F2-1A2A69BB3E51}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bodega.Plantillas", "Bodega.Plantillas\Bodega.Plantillas.csproj", "{B04A5E31-6FED-4121-ADD2-3D184AD247A3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bodega.Access", "Bodega.Access\Bodega.Access.csproj", "{791ED065-7219-4FED-9D5D-87FA26A746FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bodega.WebForms", "Bodega.WebForms\Bodega.WebForms.csproj", "{0F643BD1-A3E8-49FB-ADEC-B7F78938B2AB}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bodega.WebMvc", "Bodega.WebMvc\Bodega.WebMvc.csproj", "{0F17A248-FC61-4F4D-9861-E8946C1EB7FE}"
 EndProject
@@ -88,10 +88,6 @@ Global
 		{6E29D930-0C39-42D1-B753-56917C3D508B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E29D930-0C39-42D1-B753-56917C3D508B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6E29D930-0C39-42D1-B753-56917C3D508B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FAA14F06-86E6-4A15-B09E-086B2E5C8C21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FAA14F06-86E6-4A15-B09E-086B2E5C8C21}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FAA14F06-86E6-4A15-B09E-086B2E5C8C21}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FAA14F06-86E6-4A15-B09E-086B2E5C8C21}.Release|Any CPU.Build.0 = Release|Any CPU
 		{020C8D79-9C7B-487F-A4F2-1A2A69BB3E51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{020C8D79-9C7B-487F-A4F2-1A2A69BB3E51}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{020C8D79-9C7B-487F-A4F2-1A2A69BB3E51}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -117,17 +113,16 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{FAA14F06-86E6-4A15-B09E-086B2E5C8C21} = {670EC26E-279E-4748-AD4A-8F6E414687F1}
 		{C8F26627-A5BE-47F7-A4A8-75087051B5BC} = {670EC26E-279E-4748-AD4A-8F6E414687F1}
-		{791ED065-7219-4FED-9D5D-87FA26A746FC} = {670EC26E-279E-4748-AD4A-8F6E414687F1}
 		{26F947C0-6A2C-440B-ACC3-68FB5AC58974} = {DDEA5CD1-C5AD-4D8F-9241-FAA513EE49D2}
 		{EC8AFF64-8F59-4B68-816F-B13FC5DE3C90} = {9AA089EB-3326-470D-832A-B4521EB486FE}
+		{731DD700-F64B-4BD5-B8F2-DC05D295B0FD} = {A423873A-CCF6-421A-8876-30F9AA30BAE1}
+		{6E29D930-0C39-42D1-B753-56917C3D508B} = {A423873A-CCF6-421A-8876-30F9AA30BAE1}
 		{020C8D79-9C7B-487F-A4F2-1A2A69BB3E51} = {07830C8B-8347-4EAE-AC41-0124AE351BC2}
+		{B04A5E31-6FED-4121-ADD2-3D184AD247A3} = {A423873A-CCF6-421A-8876-30F9AA30BAE1}
+		{791ED065-7219-4FED-9D5D-87FA26A746FC} = {670EC26E-279E-4748-AD4A-8F6E414687F1}
 		{0F643BD1-A3E8-49FB-ADEC-B7F78938B2AB} = {07830C8B-8347-4EAE-AC41-0124AE351BC2}
 		{0F17A248-FC61-4F4D-9861-E8946C1EB7FE} = {07830C8B-8347-4EAE-AC41-0124AE351BC2}
-		{6E29D930-0C39-42D1-B753-56917C3D508B} = {A423873A-CCF6-421A-8876-30F9AA30BAE1}
-		{731DD700-F64B-4BD5-B8F2-DC05D295B0FD} = {A423873A-CCF6-421A-8876-30F9AA30BAE1}
-		{B04A5E31-6FED-4121-ADD2-3D184AD247A3} = {A423873A-CCF6-421A-8876-30F9AA30BAE1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		EnterpriseLibraryConfigurationToolBinariesPathV6 = packages\EnterpriseLibrary.Common.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.Validation.6.0.1304.0\lib\NET45;packages\EnterpriseLibrary.Validation.Integration.WinForms.6.0.1304.0\lib\NET45
